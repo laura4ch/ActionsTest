@@ -8,13 +8,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-
-    - name: checkout remote
-      uses: actions/checkout@3.5.2
-      with:
-        repository: 'mtararujs/python-greetings' 
-      shell: sh
-      
     - name: run command
       shell: sh
       run: pm2 delete greetings-app-${{ inputs.environment }} & set "errorlevel=O"
