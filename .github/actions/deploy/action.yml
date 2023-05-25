@@ -13,6 +13,10 @@ runs:
       run: pm2 delete greetings-app-${{ inputs.environment }} & set "errorlevel=O"
       working-directory: ./python-greetings
 
+    - name: python
+      shell: sh
+      run: which python
+
     - name: run command
       shell: sh
       run: pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
