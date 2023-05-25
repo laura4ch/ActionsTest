@@ -47,7 +47,6 @@ jobs:
       runs-on: self-hosted
       needs: [deploy-to-dev]
       steps:
-        - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/test
           with:
             environment: 'dev'
@@ -59,7 +58,6 @@ jobs:
       runs-on: self-hosted
       needs: [tests-on-dev]
       steps:
-        - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/deploy
           with:
             port: 7002
@@ -72,7 +70,6 @@ jobs:
       runs-on: self-hosted
       needs: [deploy-to-staging]
       steps:
-        - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/test
           with:
               environment: 'staging'
@@ -84,7 +81,6 @@ jobs:
       runs-on: self-hosted
       needs: [tests-on-staging]
       steps:
-        - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/deploy
           with:
             port: 7003
@@ -97,7 +93,6 @@ jobs:
       runs-on: self-hosted
       needs: [deploy-to-preprod]
       steps:
-        - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/test
           with:
               environment: 'preprod'
@@ -109,7 +104,6 @@ jobs:
       runs-on: self-hosted
       needs: [tests-on-preprod]
       steps:
-        - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/deploy
           with:
             port: 7004
@@ -122,7 +116,6 @@ jobs:
       runs-on: self-hosted
       needs: [deploy-to-prod]
       steps:
-        - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/test
           with:
               environment: 'prod'
