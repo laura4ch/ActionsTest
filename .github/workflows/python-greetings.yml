@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.5.2
-  
+        - repository: 'mtararujs/python-greetings'
       - name: Output text
         run: echo Installing all required depdendencies..
 
