@@ -9,11 +9,11 @@ runs:
   using: "composite"
   steps:
     - name: run command
-      shell: bash
+      shell: zsh
       run: pm2 delete greetings-app-${{ inputs.environment }} & set "errorlevel=O"
 
     - name: run command
-      shell: bash
+      shell: zsh
       run: pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
 
 
