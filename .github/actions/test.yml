@@ -6,9 +6,6 @@ runs:
   using: "composite"
   steps:
     - name: run command
-      run:  npm install
-
-    - name: run command
-      run: apm run greetings greetings_${{ inputs.environment }}
-
-
+      run: |
+       npm install
+       apm run greetings greetings_${{ inputs.environment }}
