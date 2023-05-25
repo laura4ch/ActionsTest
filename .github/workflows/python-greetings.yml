@@ -35,7 +35,7 @@ jobs:
         - uses: ./.github/actions/deploy
           with:
             port: 7001
-            enviroment: 'dev'
+            environment: 'dev'
 
         - name: Output text
           run: echo Deploying to dev..
@@ -47,7 +47,7 @@ jobs:
         - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/test
           with:
-            enviroment: 'dev'
+            environment: 'dev'
 
         - name: Output text
           run: echo Testing on dev..
@@ -60,7 +60,7 @@ jobs:
         - uses: ./.github/actions/deploy
           with:
             port: 7002
-            enviroment: 'staging'
+            environment: 'staging'
 
         - name: Output text
           run: echo Deploying to staging..          
@@ -72,7 +72,7 @@ jobs:
         - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/test
           with:
-              enviroment: 'staging'
+              environment: 'staging'
 
         - name: Output text
           run: echo Testing on staging..   
@@ -85,7 +85,7 @@ jobs:
         - uses: ./.github/actions/deploy
           with:
             port: 7003
-            enviroment: 'dev'
+            environment: 'dev'
 
         - name: Output text
           run: echo Deploying to preprod..  
@@ -97,7 +97,7 @@ jobs:
         - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/test
           with:
-              enviroment: 'preprod'
+              environment: 'preprod'
 
         - name: Output text
           run: echo Testing on preprod..                      
@@ -110,7 +110,7 @@ jobs:
         - uses: ./.github/actions/deploy
           with:
             port: 7004
-            enviroment: 'prod' 
+            environment: 'prod' 
 
         - name: Output text
           run: echo Deploying to prod..
@@ -122,7 +122,7 @@ jobs:
         - uses: actions/checkout@v3.5.2
         - uses: ./.github/actions/test
           with:
-              enviroment: 'prod'
+              environment: 'prod'
 
         - name: Output text
           run: echo Testing on prod..          

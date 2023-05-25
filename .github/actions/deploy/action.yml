@@ -3,7 +3,7 @@ inputs:
     description: 'port for app'
 
   environment:
-    description: 'app enviroment'
+    description: 'app environment'
 
 runs:
   using: "composite"

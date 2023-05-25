@@ -1,6 +1,6 @@
 inputs:
   environment:
-    description: 'app enviroment'
+    description: 'app environment'
 
 runs:
   using: "composite"
