@@ -12,11 +12,10 @@ runs:
     #   with:
     #     python-version: '3.11.3' 
 
-    - name: run command
-      uses: actions/setup-python@v4
+    - uses: actions/setup-python@v4
       with:
         python-version: '3.11.3' 
-      run: pm2 delete greetings-app-${{ inputs.environment }} & set "errorlevel=O"
+    - run: pm2 delete greetings-app-${{ inputs.environment }} & set "errorlevel=O"
       working-directory: ./python-greetings
 
     - name: run command
