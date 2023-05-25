@@ -23,10 +23,11 @@ jobs:
       - uses: actions/checkout@v3.5.2
         with: 
           repository: 'mtararujs/python-greetings'
-          path: 'working-directory'
+          path: 'python-greetings'
       - name: Output text
         run: echo Installing all required depdendencies..
       - name: installing
+        working-directory: ./python-greetings
         run: pip install -r requirements.txt
 
   deploy-to-dev:
