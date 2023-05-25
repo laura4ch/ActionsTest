@@ -45,7 +45,7 @@ jobs:
 
   deploy-to-staging:
       runs-on: self-hosted
-      needs: [test-on-dev]
+      needs: [tests-on-dev]
       steps:
         - uses: actions/checkout@v3.5.2
 
