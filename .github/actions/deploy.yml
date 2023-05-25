@@ -1,0 +1,15 @@
+inputs:
+  port:
+    description: 'port for app'
+
+  environment:
+    description: 'app enviroment'
+
+runs:
+  using: "composite"
+    steps:
+      - name: run command
+        run: pm2 delete greetings-app-$({ inputs.environment )) & set "errorlevel=O"
+
+      - name: run command
+        run: pm2 start app.py --name greetings-app-$({ inputs.environment )) -- --port $({ inputs.port ))
