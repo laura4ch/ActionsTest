@@ -1,0 +1,14 @@
+inputs:
+  environment:
+    description: 'app enviroment'
+
+runs:
+  using: "composite"
+  steps:
+    - name: run command
+      run:  npm install
+
+    - name: run command
+      run: apm run greetings greetings_${{ inputs.environment }}
+
+
