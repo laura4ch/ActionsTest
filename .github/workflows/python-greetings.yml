@@ -21,8 +21,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.5.2
+        with: 
+          repository: 'mtararujs/python-greetings'
+          path: 'working-directory'
       - name: Output text
         run: echo Installing all required depdendencies..
+      - name: installing
+        run: pip install -r requirements.txt
 
   deploy-to-dev:
       runs-on: self-hosted
