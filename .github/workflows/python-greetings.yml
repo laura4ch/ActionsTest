@@ -31,6 +31,8 @@ jobs:
       needs: [install-pip-deps]
       steps:
         - uses: actions/checkout@v3.5.2 
+          with:
+            repository: 'mtararujs/python-greetings'
         - uses: ./.github/actions/deploy
           with:
             port: 7001
