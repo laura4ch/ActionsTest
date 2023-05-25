@@ -17,7 +17,7 @@ on:
 jobs:
   
   install-pip-deps:
-    runs-on: self-hosted
+    runs-on: [self-hosted, macOS, ARM64]
 
     steps:
       - uses: actions/checkout@v3.5.2
@@ -32,7 +32,7 @@ jobs:
         run: pip install -r requirements.txt
 
   deploy-to-dev:
-      runs-on: self-hosted
+      runs-on: [self-hosted, macOS, ARM64]
       needs: [install-pip-deps]
       steps:
         - uses: ./.github/actions/deploy
