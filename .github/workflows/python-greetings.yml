@@ -29,7 +29,9 @@ jobs:
       runs-on: self-hosted
       needs: [install-pip-deps]
       steps:
-        - uses: actions/checkout@v3.5.2
+        - uses: actions/checkout@v3.5.2 
+          with:
+            repository: laura4ch/ActionsTest
         - uses: ./.github/actions/deploy
           with:
             port: 7001
