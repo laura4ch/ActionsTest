@@ -20,7 +20,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.5.2
 
       - name: Output text
         run: echo Installing all required depdendencies..
@@ -30,6 +30,7 @@ jobs:
       needs: [install-pip-deps]
       steps:
         - uses: actions/checkout@v3.5.2
+        - uses: ./.github/actions/deploy
 
         - name: Output text
           run: echo Deploying to dev..
@@ -39,6 +40,7 @@ jobs:
       needs: [deploy-to-dev]
       steps:
         - uses: actions/checkout@v3.5.2
+        - uses: ./.github/actions/test
 
         - name: Output text
           run: echo Testing on dev..
@@ -48,6 +50,7 @@ jobs:
       needs: [tests-on-dev]
       steps:
         - uses: actions/checkout@v3.5.2
+        - uses: ./.github/actions/deploy
 
         - name: Output text
           run: echo Deploying to staging..          
@@ -57,6 +60,7 @@ jobs:
       needs: [deploy-to-staging]
       steps:
         - uses: actions/checkout@v3.5.2
+        - uses: ./.github/actions/test
 
         - name: Output text
           run: echo Testing on staging..   
@@ -66,6 +70,7 @@ jobs:
       needs: [tests-on-staging]
       steps:
         - uses: actions/checkout@v3.5.2
+        - uses: ./.github/actions/deploy
 
         - name: Output text
           run: echo Deploying to preprod..  
@@ -75,6 +80,7 @@ jobs:
       needs: [deploy-to-preprod]
       steps:
         - uses: actions/checkout@v3.5.2
+        - uses: ./.github/actions/test
 
         - name: Output text
           run: echo Testing on preprod..                      
@@ -84,6 +90,7 @@ jobs:
       needs: [tests-on-preprod]
       steps:
         - uses: actions/checkout@v3.5.2
+        - uses: ./.github/actions/deploy
 
         - name: Output text
           run: echo Deploying to prod..
@@ -93,6 +100,7 @@ jobs:
       needs: [deploy-to-prod]
       steps:
         - uses: actions/checkout@v3.5.2
+        - uses: ./.github/actions/test
 
         - name: Output text
           run: echo Testing on prod..          
