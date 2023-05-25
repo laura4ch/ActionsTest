@@ -21,7 +21,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3.5.2
-      - uses: ./.github/actions/deploy@main
   
       - name: Output text
         run: echo Installing all required depdendencies..
@@ -31,7 +30,7 @@ jobs:
       needs: [install-pip-deps]
       steps:
         - uses: actions/checkout@v3.5.2
-        - uses: ./.github/actions/deploy
+        - uses: ./.github/actions/deploy@main
           with:
             port: 7001
             enviroment: 'dev'
